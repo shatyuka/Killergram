@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Killergram</string>
+    <string name="app_desc">Remove sponsored messages of Telegram</string>
+</resources>
