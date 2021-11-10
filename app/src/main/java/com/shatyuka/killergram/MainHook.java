@@ -12,8 +12,7 @@ public class MainHook implements IXposedHookLoadPackage {
         try {
             Class<?> chatUIActivityClass = XposedHelpers.findClass("org.telegram.ui.ChatActivity", lpparam.classLoader);
             XposedBridge.hookAllMethods(chatUIActivityClass, "addSponsoredMessages", XC_MethodReplacement.returnConstant(null));
-        } catch (Throwable throwable) {
-            XposedBridge.log("Hook failed for " + lpparam.packageName);
+        } catch (Throwable ignored) {
         }
     }
 }
