@@ -9,8 +9,16 @@ android {
         applicationId "com.shatyuka.killergram"
         minSdk 16
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode appVerCode.toInteger()
+        versionName appVerName
+    }
+    applicationVariants.all { variant ->
+        variant.resValue "string", "app_version", variant.versionName
+        variant.outputs.all { output ->
+            if (variant.buildType.name == 'release') {
+                outputFileName = "Killergram_${defaultConfig.versionName}.apk"
+            }
+        }
     }
 
     buildTypes {
