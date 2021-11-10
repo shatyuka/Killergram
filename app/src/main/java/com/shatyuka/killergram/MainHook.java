@@ -13,9 +13,12 @@ public class MainHook implements IXposedHookLoadPackage {
     public final static List<String> hookPackages = Arrays.asList(
             "org.telegram.messenger",
             "org.telegram.messenger.web",
+            "org.telegram.messenger.beta",
             "nekox.messenger",
             "tw.nekomimi.nekogram",
-            "org.telegram.plus");
+            "org.telegram.plus",
+            "com.iMe.android",
+            "org.telegram.BifToGram");
 
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpparam) {
