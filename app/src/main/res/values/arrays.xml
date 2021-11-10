@@ -2,5 +2,9 @@
 <resources>
     <string-array name="xposedscope">
         <item>org.telegram.messenger</item>
+        <item>org.telegram.messenger.web</item>
+        <item>nekox.messenger</item>
+        <item>tw.nekomimi.nekogram</item>
+        <item>org.telegram.plus</item>
     </string-array>
 </resources>

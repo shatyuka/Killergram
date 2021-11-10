@@ -2,7 +2,6 @@
 .gradle
 /local.properties
 /.idea
-/.idea/assetWizardSettings.xml
 .DS_Store
 /build
 /captures
