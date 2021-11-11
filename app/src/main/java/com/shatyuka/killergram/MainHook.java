@@ -16,16 +16,20 @@ public class MainHook implements IXposedHookLoadPackage {
             "org.telegram.messenger.beta",
             "nekox.messenger",
             "tw.nekomimi.nekogram",
+            "com.cool2645.nekolite",
             "org.telegram.plus",
             "com.iMe.android",
-            "org.telegram.BifToGram");
+            "org.telegram.BifToGram",
+            "ua.itaysonlab.messenger",
+            "org.forkclient.messenger.beta",
+            "org.aka.messenger");
 
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpparam) {
         if (hookPackages.contains(lpparam.packageName)) {
             try {
-                Class<?> chatUIActivityClass = XposedHelpers.findClass("org.telegram.ui.ChatActivity", lpparam.classLoader);
-                XposedBridge.hookAllMethods(chatUIActivityClass, "addSponsoredMessages", XC_MethodReplacement.returnConstant(null));
+                Class<?> messagesControllerClass = XposedHelpers.findClass("org.telegram.messenger.MessagesController", lpparam.classLoader);
+                XposedBridge.hookAllMethods(messagesControllerClass, "getSponsoredMessages", XC_MethodReplacement.returnConstant(null));
             } catch (Throwable ignored) {
             }
         }

@@ -9,9 +9,13 @@ An Android Xposed module to remove sponsored messages of Telegram
 - **Official** org.telegram.messenger.beta
 - **NekoX** nekox.messenger
 - **Nekogram** tw.nekomimi.nekogram
+- **Nanogram** com.cool2645.nekolite
 - **Plus Messenger** org.telegram.plus
 - **iMe Messenger** com.iMe.android
 - **BGram** org.telegram.BifToGram
+- **Catogram** ua.itaysonlab.messenger
+- **Forkgram** org.forkclient.messenger.beta
+- **aka** org.aka.messenger
 
 ## License
 
