@@ -16,6 +16,7 @@ An Android Xposed module to remove sponsored messages of Telegram
 - **Catogram** ua.itaysonlab.messenger
 - **Forkgram** org.forkclient.messenger.beta
 - **aka** org.aka.messenger
+- **TurboTel Pro** ellipi.messenger
 
 ## License
 

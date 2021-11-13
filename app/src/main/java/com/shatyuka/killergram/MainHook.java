@@ -22,7 +22,8 @@ public class MainHook implements IXposedHookLoadPackage {
             "org.telegram.BifToGram",
             "ua.itaysonlab.messenger",
             "org.forkclient.messenger.beta",
-            "org.aka.messenger");
+            "org.aka.messenger",
+            "ellipi.messenger");
 
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpparam) {

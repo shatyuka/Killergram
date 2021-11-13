@@ -13,5 +13,6 @@
         <item>ua.itaysonlab.messenger</item>
         <item>org.forkclient.messenger.beta</item>
         <item>org.aka.messenger</item>
+        <item>ellipi.messenger</item>
     </string-array>
 </resources>
