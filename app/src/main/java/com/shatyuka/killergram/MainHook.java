@@ -15,7 +15,6 @@ public class MainHook implements IXposedHookLoadPackage {
             "org.telegram.messenger.web",
             "org.telegram.messenger.beta",
             "nekox.messenger",
-            "tw.nekomimi.nekogram",
             "com.cool2645.nekolite",
             "org.telegram.plus",
             "com.iMe.android",
