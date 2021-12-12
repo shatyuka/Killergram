@@ -30,6 +30,7 @@ public class MainHook implements IXposedHookLoadPackage {
             try {
                 Class<?> messagesControllerClass = XposedHelpers.findClass("org.telegram.messenger.MessagesController", lpparam.classLoader);
                 XposedBridge.hookAllMethods(messagesControllerClass, "getSponsoredMessages", XC_MethodReplacement.returnConstant(null));
+                XposedBridge.hookAllMethods(messagesControllerClass, "isChatNoForwards", XC_MethodReplacement.returnConstant(false));
             } catch (Throwable ignored) {
             }
         }
