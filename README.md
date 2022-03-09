@@ -18,6 +18,7 @@ Also allows you to copy or save messages when "Restrict saving content" is enabl
 - **Forkgram** org.forkclient.messenger.beta
 - **aka** org.aka.messenger
 - **TurboTel Pro** ellipi.messenger
+- **Catogram X** org.nift4.catox
 
 ## License
 
