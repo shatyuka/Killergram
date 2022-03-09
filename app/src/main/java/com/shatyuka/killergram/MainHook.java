@@ -20,10 +20,10 @@ public class MainHook implements IXposedHookLoadPackage {
             "com.iMe.android",
             "org.telegram.BifToGram",
             "ua.itaysonlab.messenger",
-            "org.nift4.catox",
             "org.forkclient.messenger.beta",
             "org.aka.messenger",
-            "ellipi.messenger");
+            "ellipi.messenger",
+            "org.nift4.catox");
 
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpparam) {
