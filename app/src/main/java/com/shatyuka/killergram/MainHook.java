@@ -23,7 +23,8 @@ public class MainHook implements IXposedHookLoadPackage {
             "org.forkclient.messenger.beta",
             "org.aka.messenger",
             "ellipi.messenger",
-            "org.nift4.catox");
+            "org.nift4.catox",
+            "it.owlgram.android");
 
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpparam) {
