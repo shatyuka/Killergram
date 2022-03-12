@@ -20,6 +20,7 @@ public class MainHook implements IXposedHookLoadPackage {
             "com.iMe.android",
             "org.telegram.BifToGram",
             "ua.itaysonlab.messenger",
+            "org.forkclient.messenger",
             "org.forkclient.messenger.beta",
             "org.aka.messenger",
             "ellipi.messenger",

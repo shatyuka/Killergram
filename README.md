@@ -15,6 +15,7 @@ Also allows you to copy or save messages when "Restrict saving content" is enabl
 - **iMe Messenger** com.iMe.android
 - **BGram** org.telegram.BifToGram
 - **Catogram** ua.itaysonlab.messenger
+- **Forkgram** org.forkclient.messenger
 - **Forkgram** org.forkclient.messenger.beta
 - **aka** org.aka.messenger
 - **TurboTel Pro** ellipi.messenger
