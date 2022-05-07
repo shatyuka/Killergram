@@ -27,7 +27,9 @@ public class MainHook implements IXposedHookLoadPackage {
             "ellipi.messenger",
             "org.nift4.catox",
             "it.owlgram.android",
-            "uz.unnarsx.cherrygram");
+            "uz.unnarsx.cherrygram",
+            "com.exteragram.messenger",
+            "com.exteragram.messenger.beta");
 
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpparam) {
