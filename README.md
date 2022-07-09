@@ -20,7 +20,6 @@ Also allows you to copy or save messages when "Restrict saving content" is enabl
 - **aka** org.aka.messenger
 - **TurboTel Pro** ellipi.messenger
 - **Catogram X** org.nift4.catox
-- **OwlGram** it.owlgram.android
 
 ## License
 
