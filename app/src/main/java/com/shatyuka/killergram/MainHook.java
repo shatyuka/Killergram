@@ -44,6 +44,11 @@ public class MainHook implements IXposedHookLoadPackage {
                 if (SharedConfigClass != null) {
                     XposedBridge.hookAllMethods(SharedConfigClass, "getDevicePerformanceClass", XC_MethodReplacement.returnConstant(2));
                 }
+                Class<?> UserConfigClass = XposedHelpers.findClassIfExists("org.telegram.messenger.UserConfig", lpparam.classLoader);
+                if (UserConfigClass != null) {
+                    XposedBridge.hookAllMethods(UserConfigClass, "getMaxAccountCount", XC_MethodReplacement.returnConstant(999));
+                    XposedBridge.hookAllMethods(UserConfigClass, "hasPremiumOnAccounts", XC_MethodReplacement.returnConstant(true));
+                }
             } catch (Throwable ignored) {
             }
         }
