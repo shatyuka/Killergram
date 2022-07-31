@@ -51,6 +51,13 @@ public class MainHook implements IXposedHookLoadPackage {
                 }
             } catch (Throwable ignored) {
             }
+            try {
+                Class<?> userConfigClass = XposedHelpers.findClassIfExists("org.telegram.messenger.UserConfig", lpparam.classLoader);
+                if (userConfigClass != null) {
+                    XposedBridge.hookAllMethods(userConfigClass, "isPremium", XC_MethodReplacement.returnConstant(true));
+                }
+            } catch (Throwable ignored) {
+            }
         }
     }
 }
