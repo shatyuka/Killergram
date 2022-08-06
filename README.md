@@ -10,6 +10,7 @@ Also allows you to copy or save messages when "Restrict saving content" is enabl
 - **Official** org.telegram.messenger.web
 - **Official** org.telegram.messenger.beta
 - **NekoX** nekox.messenger
+- **Nekogram** tw.nekomimi.nekogram
 - **Nanogram** com.cool2645.nekolite
 - **Plus Messenger** org.telegram.plus
 - **iMe Messenger** com.iMe.android
