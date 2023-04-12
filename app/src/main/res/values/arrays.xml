@@ -4,13 +4,24 @@
         <item>org.telegram.messenger</item>
         <item>org.telegram.messenger.web</item>
         <item>org.telegram.messenger.beta</item>
+        <item>tw.nekomimi.nekogram</item>
         <item>nekox.messenger</item>
+        <item>org.forkclient.messenger</item>
+        <item>org.forkclient.messenger.beta</item>
+        <item>com.exteragram.messenger</item>
+        <item>com.exteragram.messenger.beta</item>
+        <item>org.telegram.mdgram</item>
+        <item>org.telegram.mdgramyou</item>
+        <item>org.telegram.BifToGram</item>
+        <item>it.owlgram.android</item>
+        <item>ua.itaysonlab.messenger</item>
+        <item>org.nift4.catox</item>
         <item>com.cool2645.nekolite</item>
+        <item>me.ninjagram.messenger</item>
+        <item>org.ninjagram.messenger</item>
+        <item>ir.ilmili.telegraph</item>
         <item>org.telegram.plus</item>
         <item>com.iMe.android</item>
-        <item>org.telegram.BifToGram</item>
-        <item>ua.itaysonlab.messenger</item>
-        <item>org.forkclient.messenger.beta</item>
         <item>org.aka.messenger</item>
         <item>ellipi.messenger</item>
     </string-array>
