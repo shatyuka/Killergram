@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.shatyuka.killergram"
         minSdk 16
-        targetSdk 31
+        targetSdk 33
         versionCode appVerCode.toInteger()
         versionName appVerName
     }
