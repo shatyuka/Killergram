@@ -53,14 +53,7 @@ public class MainHook implements IXposedHookLoadPackage {
         getSponsoredMessages.hookAllMethods("a", XC_MethodReplacement.returnConstant(null));
 
         XposedClass chat = new XposedClass("org.telegram.tgnet.TLRPC$Chat", lpparam.classLoader);
-        //chat.hookAllConstructors(new NoForwardsHook(true));
         chat.hookAllMethods("TLdeserialize", new NoForwardsHook(false));
-
-        /*
-        XposedClass message = new XposedClass("org.telegram.tgnet.TLRPC$Message", lpparam.classLoader);
-        //message.hookAllConstructors(new NoForwardsHook(true));
-        message.hookAllMethods("TLdeserialize", new NoForwardsHook(false));
-        */
 
         XposedClass sharedConfig = new XposedClass("org.telegram.messenger.SharedConfig", lpparam.classLoader);
         sharedConfig.hookAllMethods("getDevicePerformanceClass", XC_MethodReplacement.returnConstant(2));

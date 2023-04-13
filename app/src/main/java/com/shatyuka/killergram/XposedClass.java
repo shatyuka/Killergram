@@ -21,14 +21,4 @@ public class XposedClass {
             XposedBridge.log(t);
         }
     }
-
-    public void hookAllConstructors(XC_MethodHook callback) {
-        try {
-            if (aClass == null) return;
-            XposedBridge.hookAllConstructors(aClass, callback);
-        }
-        catch (Throwable t) {
-            XposedBridge.log(t);
-        }
-    }
 }
