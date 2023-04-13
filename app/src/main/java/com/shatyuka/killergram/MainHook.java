@@ -62,24 +62,10 @@ public class MainHook implements IXposedHookLoadPackage {
                     XposedBridge.hookAllMethods(UserConfigClass, "getMaxAccountCount", XC_MethodReplacement.returnConstant(999));
                     XposedBridge.hookAllMethods(UserConfigClass, "hasPremiumOnAccounts", XC_MethodReplacement.returnConstant(true));
                 }
-            } catch (Throwable ignored) { }
-        }
 
-        if (lpparam.packageName.equals("org.telegram.mdgram")) {
-            try {
                 Class<?> getSponsoredMessagesClass = XposedHelpers.findClassIfExists("org.telegram.tgnet.TLRPC$TL_channels_getSponsoredMessages", lpparam.classLoader);
                 if (getSponsoredMessagesClass != null) {
                     XposedBridge.hookAllMethods(getSponsoredMessagesClass, "a", XC_MethodReplacement.returnConstant(null));
-                }
-
-                Class<?> messageClass = XposedHelpers.findClassIfExists("org.telegram.tgnet.TLRPC$Message", lpparam.classLoader);
-                if (messageClass != null) {
-                    XposedBridge.hookAllConstructors(messageClass, new XC_MethodHook() {
-                        @Override
-                        protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                            XposedHelpers.setBooleanField(param.thisObject, "noforwards", false);
-                        }
-                    });
                 }
             } catch (Throwable ignored) { }
         }
