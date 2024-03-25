@@ -31,7 +31,8 @@ public class MainHook implements IXposedHookLoadPackage {
             "org.telegram.plus",
             "com.iMe.android",
             "org.aka.messenger",
-            "ellipi.messenger"
+            "ellipi.messenger",
+	    "it.belloworld.mercurygram"
     );
 
     @Override
