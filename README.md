@@ -31,6 +31,8 @@ These clients were successfully tested with Killergram enabled.
 | iMe Messenger  | `com.iMe.android`               |              |
 |      aka       | `org.aka.messenger`             |              |
 |  TurboTel Pro  | `ellipi.messenger`              |              |
+|  MercuryGram   | `belloworld.mercurygram`        |              |
+
 
 ## Unsupported clients
 These mods have a built-in Xposed protection
