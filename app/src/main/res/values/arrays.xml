@@ -23,5 +23,7 @@
         <item>com.iMe.android</item>
         <item>org.aka.messenger</item>
         <item>ellipi.messenger</item>
+	<item>it.belloworld.mercurygram</item>
+
     </string-array>
 </resources>
