@@ -40,7 +40,7 @@ public class MainHook implements IXposedHookLoadPackage {
                 Class<?> messagesControllerClass = XposedHelpers.findClassIfExists("org.telegram.messenger.MessagesController", lpparam.classLoader);
                 if (messagesControllerClass != null) {
                     XposedBridge.hookAllMethods(messagesControllerClass, "getSponsoredMessages", XC_MethodReplacement.returnConstant(null));
-                    XposedBridge.hookAllMethods(messagesControllerClass, "isChatNoForwards", XC_MethodReplacement.returnConstant(false));
+                    XposedBridge.hookAllMethods(messagesControllerClass, "isPeerNoForwards", XC_MethodReplacement.returnConstant(false));
                 }
                 Class<?> sponsoredMessagesClass = XposedHelpers.findClassIfExists("org.drinkless.tdlib.TdApi$SponsoredMessages", lpparam.classLoader);
                 if (sponsoredMessagesClass != null) {
