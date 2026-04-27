@@ -23,6 +23,8 @@ Also allows you to copy or save messages when "Restrict saving content" is enabl
 - **Catogram X** org.nift4.catox
 - **OwlGram** it.owlgram.android
 - **Cherrygram** uz.unnarsx.cherrygram
+- **exteraGram** com.exteragram.messenger
+- **exteraGram** com.exteragram.messenger.beta
 
 ## License
 
