@@ -29,7 +29,9 @@ public class MainHook implements IXposedHookLoadPackage {
             "it.owlgram.android",
             "uz.unnarsx.cherrygram",
             "com.exteragram.messenger",
-            "com.exteragram.messenger.beta");
+            "com.exteragram.messenger.beta",
+            "org.thunderdog.challegram"
+    );
 
     @Override
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpparam) {
@@ -39,6 +41,10 @@ public class MainHook implements IXposedHookLoadPackage {
                 if (messagesControllerClass != null) {
                     XposedBridge.hookAllMethods(messagesControllerClass, "getSponsoredMessages", XC_MethodReplacement.returnConstant(null));
                     XposedBridge.hookAllMethods(messagesControllerClass, "isChatNoForwards", XC_MethodReplacement.returnConstant(false));
+                }
+                Class<?> sponsoredMessagesClass = XposedHelpers.findClassIfExists("org.drinkless.tdlib.TdApi$SponsoredMessages", lpparam.classLoader);
+                if (sponsoredMessagesClass != null) {
+                    XposedBridge.hookAllMethods(sponsoredMessagesClass, "getConstructor", XC_MethodReplacement.returnConstant(0));
                 }
                 Class<?> chatUIActivityClass = XposedHelpers.findClassIfExists("org.telegram.ui.ChatActivity", lpparam.classLoader);
                 if (chatUIActivityClass != null) {

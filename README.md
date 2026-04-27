@@ -25,6 +25,7 @@ Also allows you to copy or save messages when "Restrict saving content" is enabl
 - **Cherrygram** uz.unnarsx.cherrygram
 - **exteraGram** com.exteragram.messenger
 - **exteraGram** com.exteragram.messenger.beta
+- **Telegram X** org.thunderdog.challegram
 
 ## License
 
