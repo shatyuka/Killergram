@@ -33,7 +33,8 @@ public class MainHook implements IXposedHookLoadPackage {
             "com.exteragram.messenger",
             "com.exteragram.messenger.beta",
             "org.thunderdog.challegram",
-            "ir.ilmili.telegraph"
+            "ir.ilmili.telegraph",
+            "top.qwq2333.nullgram"
     );
 
     @Override
