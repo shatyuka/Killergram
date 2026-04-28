@@ -1,9 +1,11 @@
 package com.shatyuka.killergram;
 
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
+import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XC_MethodReplacement;
 import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.XposedHelpers;
@@ -30,7 +32,8 @@ public class MainHook implements IXposedHookLoadPackage {
             "uz.unnarsx.cherrygram",
             "com.exteragram.messenger",
             "com.exteragram.messenger.beta",
-            "org.thunderdog.challegram"
+            "org.thunderdog.challegram",
+            "ir.ilmili.telegraph"
     );
 
     @Override
@@ -43,9 +46,32 @@ public class MainHook implements IXposedHookLoadPackage {
                     XposedBridge.hookAllMethods(messagesControllerClass, "isChatNoForwards", XC_MethodReplacement.returnConstant(false));
                     XposedBridge.hookAllMethods(messagesControllerClass, "isUserNoForwards", XC_MethodReplacement.returnConstant(false));
                 }
-                Class<?> sponsoredMessagesClass = XposedHelpers.findClassIfExists("org.drinkless.tdlib.TdApi$SponsoredMessages", lpparam.classLoader);
-                if (sponsoredMessagesClass != null) {
-                    XposedBridge.hookAllMethods(sponsoredMessagesClass, "getConstructor", XC_MethodReplacement.returnConstant(0));
+                Class<?> tlrpcSponsoredMessagesClass = XposedHelpers.findClassIfExists("org.telegram.tgnet.TLRPC$messages_SponsoredMessages", lpparam.classLoader);
+                if (tlrpcSponsoredMessagesClass != null) {
+                    XposedBridge.hookAllMethods(tlrpcSponsoredMessagesClass, "TLdeserialize", XC_MethodReplacement.returnConstant(null));
+                }
+                Class<?> tlrpcChatClass = XposedHelpers.findClassIfExists("org.telegram.tgnet.TLRPC$Chat", lpparam.classLoader);
+                if (tlrpcChatClass != null) {
+                    Field noforwardsField = tlrpcChatClass.getField("noforwards");
+                    XposedBridge.hookAllMethods(tlrpcChatClass, "TLdeserialize", new XC_MethodHook() {
+                        @Override
+                        protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                            noforwardsField.setBoolean(param.getResult(), false);
+                        }
+                    });
+                }
+                Class<?> tlrpcUserFullClass = XposedHelpers.findClassIfExists("org.telegram.tgnet.TLRPC$UserFull", lpparam.classLoader);
+                if (tlrpcUserFullClass != null) {
+                    Field noforwardsPeerEnabledField = tlrpcUserFullClass.getField("noforwards_peer_enabled");
+                    Field noforwardsMyEnabledField = tlrpcUserFullClass.getField("noforwards_my_enabled");
+                    XposedBridge.hookAllMethods(tlrpcChatClass, "TLdeserialize", new XC_MethodHook() {
+                        @Override
+                        protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                            Object obj = param.getResult();
+                            noforwardsPeerEnabledField.setBoolean(obj, false);
+                            noforwardsMyEnabledField.setBoolean(obj, false);
+                        }
+                    });
                 }
                 Class<?> chatUIActivityClass = XposedHelpers.findClassIfExists("org.telegram.ui.ChatActivity", lpparam.classLoader);
                 if (chatUIActivityClass != null) {
@@ -59,6 +85,12 @@ public class MainHook implements IXposedHookLoadPackage {
                 if (UserConfigClass != null) {
                     XposedBridge.hookAllMethods(UserConfigClass, "getMaxAccountCount", XC_MethodReplacement.returnConstant(999));
                     XposedBridge.hookAllMethods(UserConfigClass, "hasPremiumOnAccounts", XC_MethodReplacement.returnConstant(true));
+                }
+
+                // Telegram X
+                Class<?> tdapiSponsoredMessagesClass = XposedHelpers.findClassIfExists("org.drinkless.tdlib.TdApi$SponsoredMessages", lpparam.classLoader);
+                if (tdapiSponsoredMessagesClass != null) {
+                    XposedBridge.hookAllMethods(tdapiSponsoredMessagesClass, "getConstructor", XC_MethodReplacement.returnConstant(0));
                 }
             } catch (Throwable ignored) {
             }
