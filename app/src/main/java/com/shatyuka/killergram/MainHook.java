@@ -1,5 +1,6 @@
 package com.shatyuka.killergram;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
@@ -91,9 +92,27 @@ public class MainHook implements IXposedHookLoadPackage {
                 }
 
                 // Telegram X
-                Class<?> tdapiSponsoredMessagesClass = XposedHelpers.findClassIfExists("org.drinkless.tdlib.TdApi$SponsoredMessages", lpparam.classLoader);
-                if (tdapiSponsoredMessagesClass != null) {
-                    XposedBridge.hookAllMethods(tdapiSponsoredMessagesClass, "getConstructor", XC_MethodReplacement.returnConstant(0));
+                Class<?> tdlibClientClass = XposedHelpers.findClassIfExists("org.drinkless.tdlib.Client", lpparam.classLoader);
+                if (tdlibClientClass != null) {
+                    Class<?> sponsoredMessageClass = XposedHelpers.findClassIfExists("org.drinkless.tdlib.TdApi$SponsoredMessage", lpparam.classLoader);
+                    Class<?> sponsoredMessagesClass = XposedHelpers.findClassIfExists("org.drinkless.tdlib.TdApi$SponsoredMessages", lpparam.classLoader);
+                    Field messagesField = sponsoredMessagesClass.getField("messages");
+                    XposedBridge.hookAllMethods(tdlibClientClass, "nativeClientReceive", new XC_MethodHook() {
+                        @Override
+                        protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                            int resultN = (int) param.getResult();
+                            Object[] events = (Object[]) param.args[2];
+                            for (int i = 0; i < resultN; i++) {
+                                Object event = events[i];
+                                if (event != null) {
+                                    Class<?> eventClass = event.getClass();
+                                    if (eventClass == sponsoredMessagesClass) {
+                                        messagesField.set(event, Array.newInstance(sponsoredMessageClass, 0));
+                                    }
+                                }
+                            }
+                        }
+                    });
                 }
             } catch (Throwable ignored) {
             }
