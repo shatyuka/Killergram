@@ -6,30 +6,32 @@ Also allows you to copy or save messages when "Restrict saving content" is enabl
 
 ### Support clients
 
-- **Official** org.telegram.messenger
-- **Official** org.telegram.messenger.web
-- **Official** org.telegram.messenger.beta
-- **NekoX** nekox.messenger
-- **Nanogram** com.cool2645.nekolite
-- **Plus Messenger** org.telegram.plus
-- **iMe Messenger** com.iMe.android
-- **BGram** org.telegram.BifToGram
-- **Catogram** ua.itaysonlab.messenger
-- **Forkgram** org.forkgram.messenger
-- **Forkgram** org.forkclient.messenger
-- **Forkgram** org.forkclient.messenger.beta
-- **aka** org.aka.messenger
-- **TurboTel Pro** ellipi.messenger
-- **Catogram X** org.nift4.catox
-- **OwlGram** it.owlgram.android
-- **Cherrygram** uz.unnarsx.cherrygram
-- **exteraGram** com.exteragram.messenger
-- **exteraGram** com.exteragram.messenger.beta
-- **Telegram X** org.thunderdog.challegram
-- **Graph Messenger** ir.ilmili.telegraph
-- **Nullgram** top.qwq2333.nullgram
-- **OctoGram** it.octogram.android
-- **Mercurygram** it.belloworld.mercurygram
+| Name            | Package                       | Notes       |
+|-----------------|-------------------------------|-------------|
+| Official        | org.telegram.messenger        |             |
+| Official        | org.telegram.messenger.web    |             |
+| Official        | org.telegram.messenger.beta   |             |
+| NekoX           | nekox.messenger               |             |
+| Nanogram        | com.cool2645.nekolite         |             |
+| Plus Messenger  | org.telegram.plus             |             |
+| iMe Messenger   | com.iMe.android               |             |
+| BGram           | org.telegram.BifToGram        |             |
+| Catogram        | ua.itaysonlab.messenger       |             |
+| Forkgram        | org.forkgram.messenger        |             |
+| Forkgram        | org.forkclient.messenger      |             |
+| Forkgram        | org.forkclient.messenger.beta |             |
+| aka             | org.aka.messenger             |             |
+| TurboTel Pro    | ellipi.messenger              |             |
+| Catogram X      | org.nift4.catox               |             |
+| OwlGram         | it.owlgram.android            |             |
+| Cherrygram      | uz.unnarsx.cherrygram         |             |
+| exteraGram      | com.exteragram.messenger      |             |
+| exteraGram      | com.exteragram.messenger.beta |             |
+| Telegram X      | org.thunderdog.challegram     | No Ads only |
+| Graph Messenger | ir.ilmili.telegraph           |             |
+| Nullgram        | top.qwq2333.nullgram          |             |
+| OctoGram        | it.octogram.android           |             |
+| Mercurygram     | it.belloworld.mercurygram     |             |
 
 ## License
 
