@@ -29,6 +29,7 @@ Also allows you to copy or save messages when "Restrict saving content" is enabl
 - **Graph Messenger** ir.ilmili.telegraph
 - **Nullgram** top.qwq2333.nullgram
 - **OctoGram** it.octogram.android
+- **Mercurygram** it.belloworld.mercurygram
 
 ## License
 
