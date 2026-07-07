@@ -68,7 +68,7 @@ public class MainHook implements IXposedHookLoadPackage {
                 if (tlrpcUserFullClass != null) {
                     Field noforwardsPeerEnabledField = tlrpcUserFullClass.getField("noforwards_peer_enabled");
                     Field noforwardsMyEnabledField = tlrpcUserFullClass.getField("noforwards_my_enabled");
-                    XposedBridge.hookAllMethods(tlrpcChatClass, "TLdeserialize", new XC_MethodHook() {
+                    XposedBridge.hookAllMethods(tlrpcUserFullClass, "TLdeserialize", new XC_MethodHook() {
                         @Override
                         protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                             Object obj = param.getResult();
