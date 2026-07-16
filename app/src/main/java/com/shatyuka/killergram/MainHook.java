@@ -24,6 +24,7 @@ public class MainHook implements IXposedHookLoadPackage {
             "org.telegram.BifToGram",
             "ua.itaysonlab.messenger",
             "org.forkgram.messenger",
+            "org.forkgram.classic",
             "org.forkclient.messenger",
             "org.forkclient.messenger.beta",
             "org.aka.messenger",
