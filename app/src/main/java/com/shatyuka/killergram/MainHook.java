@@ -38,7 +38,8 @@ public class MainHook implements IXposedHookLoadPackage {
             "ir.ilmili.telegraph",
             "top.qwq2333.nullgram",
             "it.octogram.android",
-            "it.belloworld.mercurygram"
+            "it.belloworld.mercurygram",
+            "momo.gram"
     );
 
     @Override
