@@ -34,6 +34,7 @@ Also allows you to copy or save messages when "Restrict saving content" is enabl
 | OctoGram         | it.octogram.android           |             |
 | Mercurygram      | it.belloworld.mercurygram     |             |
 | Momogram         | momo.gram                     |             |
+| moeGramX         | moe.kirao.mgx                 | No Ads only |
 
 ## License
 
