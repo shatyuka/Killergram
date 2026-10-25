@@ -117,6 +117,12 @@ public class MainHook implements IXposedHookLoadPackage {
                         }
                     });
                 }
+
+                // Cherrygram
+                Class<?> adsGramApiClass = XposedHelpers.findClassIfExists("uz.unnarsx.cherrygram.donates.adsgram.AdsGramApi", lpparam.classLoader);
+                if (adsGramApiClass != null) {
+                    XposedBridge.hookAllMethods(adsGramApiClass, "loadAd", XC_MethodReplacement.returnConstant(null));
+                }
             } catch (Throwable ignored) {
             }
         }
