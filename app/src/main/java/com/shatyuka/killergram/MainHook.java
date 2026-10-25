@@ -40,7 +40,8 @@ public class MainHook implements IXposedHookLoadPackage {
             "it.octogram.android",
             "it.belloworld.mercurygram",
             "momo.gram",
-            "moe.kirao.mgx"
+            "moe.kirao.mgx",
+            "com.brent.novagram"
     );
 
     @Override
